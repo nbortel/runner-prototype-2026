@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="runner-prototype-2026"
+run/main_scene="res://scene/the_world.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
 
 [physics]
 
@@ -21,3 +30,4 @@ config/icon="res://icon.svg"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.00093636644, 0.00093636644, 0.00093636644, 1)
