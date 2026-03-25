@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bd57tja1vueh2" path="res://assets/placeholder/single_tile.png" id="1_q4xw5"]
 [ext_resource type="Script" uid="uid://cb35fbv76ft13" path="res://scene/player_character.gd" id="2_cdqyx"]
 [ext_resource type="Texture2D" uid="uid://1wy375rbrr1o" path="res://assets/placeholder/player_hitbox.png" id="2_ukvlg"]
+[ext_resource type="Script" uid="uid://ce066psfknbxf" path="res://scene/camera_2d.gd" id="4_kv16r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukvlg"]
 texture = ExtResource("1_q4xw5")
@@ -33,3 +34,8 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter" unique_id=231886152]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_ukvlg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=771935656 node_paths=PackedStringArray("target_node")]
+anchor_mode = 0
+script = ExtResource("4_kv16r")
+target_node = NodePath("../PlayerCharacter")
