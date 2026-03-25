@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dodghnlu8uht8"]
+
+[ext_resource type="Script" uid="uid://bbq3ng0tlbl36" path="res://scenes/entities/moving_block.gd" id="1_rtm8o"]
+[ext_resource type="Texture2D" uid="uid://bd57tja1vueh2" path="res://assets/placeholder/single_tile.png" id="2_m02e6"]
+
+[sub_resource type="Curve2D" id="Curve2D_1sruj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aerrv"]
+size = Vector2(16, 16)
+
+[node name="MovingBlock" type="Path2D" unique_id=443394162]
+curve = SubResource("Curve2D_1sruj")
+script = ExtResource("1_rtm8o")
+follow_speed = 20.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1769073060]
+rotation = 1.5707964
+rotates = false
+loop = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PathFollow2D" unique_id=1861899052]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/StaticBody2D" unique_id=1452283536]
+position = Vector2(-6.993822e-07, -16)
+texture = ExtResource("2_m02e6")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/StaticBody2D" unique_id=2128806345]
+position = Vector2(8.000001, -7.999999)
+shape = SubResource("RectangleShape2D_aerrv")
