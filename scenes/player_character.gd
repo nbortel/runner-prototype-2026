@@ -7,10 +7,12 @@ const BACKWARD_SPEED_MODIFIER = 25.0
 
 const JUMP_VELOCITY = -400.0
 
+@export var gravity_on: bool = true
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and gravity_on:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
