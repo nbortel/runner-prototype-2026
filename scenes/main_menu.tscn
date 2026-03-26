@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b581jv0kd6m2"]
+
+[ext_resource type="Script" uid="uid://ca5nygs00kp5b" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+
+[node name="Main Menu" type="Control" unique_id=1381736434]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_l6cm7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2056923267]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="HBoxContainer" parent="VBoxContainer" unique_id=1970800686]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Title" unique_id=2146165666]
+layout_mode = 2
+text = "Runner Prototype 2026"
+
+[node name="StartGameButton" type="HBoxContainer" parent="VBoxContainer" unique_id=576756964]
+layout_mode = 2
+
+[node name="StartGameIndicator" type="Label" parent="VBoxContainer/StartGameButton" unique_id=1495978012]
+visible = false
+layout_mode = 2
+text = ">"
+
+[node name="Label" type="Label" parent="VBoxContainer/StartGameButton" unique_id=1093849454]
+layout_mode = 2
+text = "Start Game"
+
+[node name="ExitGameButton" type="HBoxContainer" parent="VBoxContainer" unique_id=1876794359]
+layout_mode = 2
+
+[node name="ExitGameIndicator" type="Label" parent="VBoxContainer/ExitGameButton" unique_id=724025838]
+visible = false
+layout_mode = 2
+text = ">"
+
+[node name="Label" type="Label" parent="VBoxContainer/ExitGameButton" unique_id=1502617289]
+layout_mode = 2
+text = "Exit Game"
