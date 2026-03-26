@@ -1,3 +1,4 @@
+class_name HelperFunctions
 extends Node
 ### Global helper functions. STATIC ONLY
 
