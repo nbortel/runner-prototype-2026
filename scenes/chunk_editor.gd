@@ -87,11 +87,11 @@ func load_chunk_tiles() -> void:
 			var cell_data: Dictionary = data_received
 			# Load tile map data
 			for cell: String in cell_data:
-				var cell_vector: Vector2i = string_to_vector2i(cell)
+				var cell_vector: Vector2i = HelperFunctions.string_to_vector2i(cell)
 				if cell_vector:
 					var source_id: int = cell_data[cell][0]
 					var coord_as_string: String = cell_data[cell][1]
-					var atlas_coordinate: Vector2i = string_to_vector2i(coord_as_string)
+					var atlas_coordinate: Vector2i = HelperFunctions.string_to_vector2i(coord_as_string)
 					tile_map_layer.set_cell(cell_vector, source_id, atlas_coordinate)
 		else:
 			print("unexpected data in JSON")
@@ -136,15 +136,3 @@ func get_tilemap_data(tilemap: TileMapLayer) -> Dictionary:
 		map_data[cell] = [source_id, atlas_coordinate]
 	
 	return map_data
-
-
-static func string_to_vector2i(string := "") -> Vector2i:
-	if string:
-		var new_string: String = string
-		new_string = new_string.erase(0, 1)
-		new_string = new_string.erase(new_string.length() - 1, 1)
-		var array: PackedStringArray = new_string.split(", ")
-
-		return Vector2i(int(array[0]), int(array[1]))
-
-	return Vector2i.ZERO
