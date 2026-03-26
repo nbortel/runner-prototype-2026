@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://nwplimx8h3ma"]
 
 [ext_resource type="PackedScene" uid="uid://dodghnlu8uht8" path="res://scenes/entities/moving_block.tscn" id="1_487j1"]
+[ext_resource type="PackedScene" uid="uid://cixq8xynh66dd" path="res://scenes/entities/score_pickup.tscn" id="2_5hted"]
 
 [sub_resource type="Curve2D" id="Curve2D_487j1"]
 _data = {
@@ -13,3 +14,15 @@ point_count = 2
 [node name="MovingBlock" parent="." unique_id=443394162 instance=ExtResource("1_487j1")]
 position = Vector2(64, 224)
 curve = SubResource("Curve2D_487j1")
+
+[node name="ScorePickup" parent="." unique_id=1690499905 instance=ExtResource("2_5hted")]
+position = Vector2(64, 208)
+
+[node name="ScorePickup2" parent="." unique_id=580040894 instance=ExtResource("2_5hted")]
+position = Vector2(128, 208)
+
+[node name="ScorePickup3" parent="." unique_id=314418862 instance=ExtResource("2_5hted")]
+position = Vector2(320, 208)
+
+[node name="ScorePickup4" parent="." unique_id=94049231 instance=ExtResource("2_5hted")]
+position = Vector2(384, 208)

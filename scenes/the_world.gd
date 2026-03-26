@@ -11,12 +11,21 @@ var player_reference: CharacterBody2D = null
 var chunk_name_list: Array[String] = ["chunk_1", "chunk_2", "chunk_3"]
 
 var score: int = 0
+var score_timer: Timer
+var score_timer_interval: float = 0.5
 var game_over_screen: PackedScene = preload("res://scenes/game_over_screen.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player_reference = get_node("PlayerCharacter")
 	add_chunk()
+	GlobalSignals.award_score.connect(add_score)
+	
+	score_timer = Timer.new()
+	score_timer.wait_time = score_timer_interval
+	score_timer.autostart = true
+	score_timer.timeout.connect(add_score)
+	add_child(score_timer)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,13 +34,16 @@ func _process(_delta: float) -> void:
 	if player_reference.position.distance_to(last_chunk.position) < 2 * CHUNK_WIDTH:
 		var chunk_name: String = chunk_name_list[randi_range(0, len(chunk_name_list) - 1)]
 		add_chunk(chunk_name)
-	update_score()
 	if player_reference.velocity == Vector2.ZERO:
 		game_over()
 
 
+func add_score(amount: int = 1) -> void:
+	score += amount
+	update_score()
+
+
 func update_score() -> void:
-	score = int(player_reference.position.x / 10)
 	var score_label: Label = $Camera2D/UI/ScoreIndicator
 	score_label.text = "Score: " + str(score)
 

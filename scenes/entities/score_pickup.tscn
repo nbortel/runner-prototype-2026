@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cixq8xynh66dd"]
+
+[ext_resource type="Script" uid="uid://nm2loet54syx" path="res://scenes/entities/score_pickup.gd" id="1_8cu03"]
+[ext_resource type="Texture2D" uid="uid://5c0hiqr1lj2h" path="res://assets/placeholder/pickup.png" id="1_mrtgx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cu03"]
+size = Vector2(8, 8)
+
+[node name="ScorePickup" type="Area2D" unique_id=1690499905]
+script = ExtResource("1_8cu03")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=842018334]
+position = Vector2(-4, -4)
+texture = ExtResource("1_mrtgx")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2024469184]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_8cu03")
