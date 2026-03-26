@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://1wy375rbrr1o" path="res://assets/placeholder/player_hitbox.png" id="2_ukvlg"]
 [ext_resource type="Script" uid="uid://ce066psfknbxf" path="res://scenes/camera_2d.gd" id="4_kv16r"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukvlg"]
-size = Vector2(12, 16)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m77hu"]
+radius = 6.0
+height = 16.0
 
 [node name="TheWorld" type="Node2D" unique_id=473882359]
 script = ExtResource("1_m77hu")
@@ -25,7 +26,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter" unique_id=231886152]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_ukvlg")
+shape = SubResource("CapsuleShape2D_m77hu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=771935656 node_paths=PackedStringArray("target_node")]
 anchor_mode = 0

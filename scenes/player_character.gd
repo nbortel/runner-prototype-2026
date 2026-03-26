@@ -2,13 +2,14 @@ class_name PlayerCharacter
 extends CharacterBody2D
 
 const VELOCITY_DELTA = 3.0
-const BASE_SPEED: int = 100.0
-const FORWARD_SPEED_MODIFIER = 25.0
-const BACKWARD_SPEED_MODIFIER = 25.0
+const BASE_SPEED: int = 100
+const FORWARD_SPEED_MODIFIER: int = 25
+const BACKWARD_SPEED_MODIFIER: int = 25
 
 const JUMP_VELOCITY = -400.0
 
 @export var gravity_on: bool = true
+@export var added_speed: int = 0
 
 
 func _physics_process(delta: float) -> void:
@@ -23,9 +24,9 @@ func _physics_process(delta: float) -> void:
 	# Handle Horizontal Movement
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction == 1:
-		velocity.x = move_toward(velocity.x, BASE_SPEED + FORWARD_SPEED_MODIFIER, VELOCITY_DELTA)
+		velocity.x = move_toward(velocity.x, BASE_SPEED + added_speed + (FORWARD_SPEED_MODIFIER + added_speed) , VELOCITY_DELTA)
 	elif direction == -1:
-		velocity.x = move_toward(velocity.x, BASE_SPEED - BACKWARD_SPEED_MODIFIER, VELOCITY_DELTA)
+		velocity.x = move_toward(velocity.x, BASE_SPEED + added_speed - (BACKWARD_SPEED_MODIFIER + added_speed), VELOCITY_DELTA)
 	else:
 		velocity.x = move_toward(velocity.x, BASE_SPEED, VELOCITY_DELTA)
 	move_and_slide()

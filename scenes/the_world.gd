@@ -6,7 +6,7 @@ const MAX_LOADED_CHUNKS = 10
 
 var chunk_queue: Array[Node] = []
 var next_chunk_id: int = 0
-var player_reference: CharacterBody2D = null
+var player_reference: PlayerCharacter = null
 
 var chunk_name_list: Array[String] = ["chunk_1", "chunk_2", "chunk_3"]
 
@@ -34,12 +34,14 @@ func _process(_delta: float) -> void:
 	if player_reference.position.distance_to(last_chunk.position) < 2 * CHUNK_WIDTH:
 		var chunk_name: String = chunk_name_list[randi_range(0, len(chunk_name_list) - 1)]
 		add_chunk(chunk_name)
-	if player_reference.velocity == Vector2.ZERO:
+	if player_reference.velocity.x == 0:
 		game_over()
 
 
 func add_score(amount: int = 1) -> void:
 	score += amount
+	@warning_ignore("integer_division")
+	player_reference.added_speed = int(score)
 	update_score()
 
 
