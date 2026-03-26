@@ -2,54 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://dodghnlu8uht8" path="res://scenes/entities/moving_block.tscn" id="1_487j1"]
 
-[sub_resource type="Curve2D" id="Curve2D_1sruj"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_5hted"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_ya1j8"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_30lba"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128)
-}
-point_count = 2
-
 [sub_resource type="Curve2D" id="Curve2D_487j1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 352, 0)
 }
 point_count = 2
 
-[node name="Entities" type="Node2D" unique_id=404293091]
+[node name="Entities" type="Node2D" unique_id=530711532]
 
 [node name="MovingBlock" parent="." unique_id=443394162 instance=ExtResource("1_487j1")]
-position = Vector2(320, 128)
-curve = SubResource("Curve2D_1sruj")
-
-[node name="MovingBlock2" parent="." unique_id=414594447 instance=ExtResource("1_487j1")]
-position = Vector2(256, 128)
-curve = SubResource("Curve2D_5hted")
-
-[node name="MovingBlock3" parent="." unique_id=756412396 instance=ExtResource("1_487j1")]
-position = Vector2(192, 128)
-curve = SubResource("Curve2D_ya1j8")
-
-[node name="MovingBlock4" parent="." unique_id=1832238303 instance=ExtResource("1_487j1")]
-position = Vector2(128, 64)
-curve = SubResource("Curve2D_30lba")
-
-[node name="MovingBlock5" parent="." unique_id=1624769721 instance=ExtResource("1_487j1")]
-position = Vector2(128, 64)
+position = Vector2(64, 224)
 curve = SubResource("Curve2D_487j1")

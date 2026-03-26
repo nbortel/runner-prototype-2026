@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://buvku81gc8qcx"]
+
+[ext_resource type="PackedScene" uid="uid://dodghnlu8uht8" path="res://scenes/entities/moving_block.tscn" id="1_kjle2"]
+
+[sub_resource type="Curve2D" id="Curve2D_guq1r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -104)
+}
+point_count = 2
+
+[node name="Entities" type="Node2D" unique_id=771565018]
+
+[node name="MovingBlock" parent="." unique_id=443394162 instance=ExtResource("1_kjle2")]
+position = Vector2(224, 208)
+curve = SubResource("Curve2D_guq1r")
