@@ -14,4 +14,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if target_node != null:
 		position.x = target_node.position.x + OFFSET_X
-		position.y = target_node.position.y + OFFSET_Y
+		#position.y = target_node.position.y + OFFSET_Y
