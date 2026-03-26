@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://nwplimx8h3ma"]
+
+[ext_resource type="PackedScene" uid="uid://dodghnlu8uht8" path="res://scenes/entities/moving_block.tscn" id="1_487j1"]
+[ext_resource type="Script" uid="uid://bbq3ng0tlbl36" path="res://scenes/entities/moving_block.gd" id="2_5hted"]
+
+[sub_resource type="Curve2D" id="Curve2D_1sruj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_5hted"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_ya1j8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_30lba"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128)
+}
+point_count = 2
+
+[node name="Entities" type="Node2D" unique_id=404293091]
+
+[node name="MovingBlock" type="Path2D" parent="." unique_id=443394162 instance=ExtResource("1_487j1")]
+position = Vector2(320, 128)
+curve = SubResource("Curve2D_1sruj")
+script = ExtResource("2_5hted")
+follow_speed = 20.0
+
+[node name="MovingBlock2" type="Path2D" parent="." unique_id=414594447 instance=ExtResource("1_487j1")]
+position = Vector2(256, 128)
+curve = SubResource("Curve2D_5hted")
+script = ExtResource("2_5hted")
+follow_speed = 20.0
+
+[node name="MovingBlock3" type="Path2D" parent="." unique_id=756412396 instance=ExtResource("1_487j1")]
+position = Vector2(192, 128)
+curve = SubResource("Curve2D_ya1j8")
+script = ExtResource("2_5hted")
+follow_speed = 20.0
+
+[node name="MovingBlock4" parent="." unique_id=1832238303 instance=ExtResource("1_487j1")]
+position = Vector2(128, 64)
+curve = SubResource("Curve2D_30lba")
