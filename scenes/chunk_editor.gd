@@ -11,7 +11,7 @@ extends Node2D
 ## Clear the contents of the chunk
 func clear_chunk() -> void:
 	var tile_map: TileMapLayer = $TileMapLayer
-	var entities: Node2D = $Entities
+	var entities: Node2D = get_node("Entities")
 	tile_map.clear()
 	if entities:
 		for entity in entities.get_children():
@@ -49,7 +49,7 @@ func save_tile_map_data() -> void:
 
 ## Save entity data as PackedScene
 func save_entity_data() -> void:
-	var entities: Node2D = $Entities
+	var entities: Node2D = get_node("Entities")
 	# Need to set owner for entities to be persisted in PackedScene
 	entities.owner = self
 	for entity in entities.get_children():
@@ -107,7 +107,7 @@ func load_chunk_entities() -> void:
 	var file_path: String = "res://chunks/" + chunk_name + ".tscn"
 	var packed_scene: PackedScene = load(file_path)
 	var packed_entities: Node = packed_scene.instantiate()
-	var entities: Node2D = $Entities
+	var entities: Node2D = get_node("Entities")
 	if entities:
 		entities.queue_free()
 	add_child(packed_entities)

@@ -1,65 +1,11 @@
-[gd_scene format=4 uid="uid://fyhwiss42cio"]
+[gd_scene format=3 uid="uid://fyhwiss42cio"]
 
 [ext_resource type="Script" uid="uid://b1x0w06lgwvt1" path="res://scenes/chunk_editor.gd" id="1_rpqeg"]
 [ext_resource type="TileSet" uid="uid://be6u8po13ikfd" path="res://resources/main_tileset.tres" id="2_rpqeg"]
-[ext_resource type="PackedScene" uid="uid://nwplimx8h3ma" path="res://chunks/chunk_1.tscn" id="3_oeon4"]
-[ext_resource type="Script" uid="uid://bbq3ng0tlbl36" path="res://scenes/entities/moving_block.gd" id="4_hf3ra"]
-[ext_resource type="PackedScene" uid="uid://dodghnlu8uht8" path="res://scenes/entities/moving_block.tscn" id="5_q1uxb"]
-
-[sub_resource type="Curve2D" id="Curve2D_1sruj"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_5hted"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_ya1j8"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_30lba"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128)
-}
-point_count = 2
 
 [node name="ChunkEditor" type="Node2D" unique_id=1612492083]
 script = ExtResource("1_rpqeg")
-chunk_name = "chunk_1"
+chunk_name = "default"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1138750515]
-tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAAAAA8AAAAAAAAAAAABAAEAAAAAAAAAAAABAA8AAAAAAAAAAAACAAEAAAAAAAAAAAACAA8AAAAAAAAAAAADAAEAAAAAAAAAAAADAA8AAAAAAAAAAAAEAAEAAAAAAAAAAAAEAA8AAAAAAAAAAAAFAAEAAAAAAAAAAAAFAA8AAAAAAAAAAAAGAAEAAAAAAAAAAAAGAA8AAAAAAAAAAAAHAAEAAAAAAAAAAAAHAA8AAAAAAAAAAAAIAAEAAAAAAAAAAAAIAA8AAAAAAAAAAAAJAAEAAAAAAAAAAAAJAA8AAAAAAAAAAAAKAAEAAAAAAAAAAAAKAA8AAAAAAAAAAAALAAEAAAAAAAAAAAALAA8AAAAAAAAAAAAMAAEAAAAAAAAAAAAMAA8AAAAAAAAAAAANAAEAAAAAAAAAAAANAA8AAAAAAAAAAAAOAAEAAAAAAAAAAAAOAA8AAAAAAAAAAAAPAAEAAAAAAAAAAAAPAA8AAAAAAAAAAAAQAAEAAAAAAAAAAAAQAA8AAAAAAAAAAAARAAEAAAAAAAAAAAARAA8AAAAAAAAAAAASAAEAAAAAAAAAAAASAA8AAAAAAAAAAAATAAEAAAAAAAAAAAATAA8AAAAAAAAAAAAUAAEAAAAAAAAAAAAUAA8AAAAAAAAAAAAVAAEAAAAAAAAAAAAVAA8AAAAAAAAAAAAWAAEAAAAAAAAAAAAWAA8AAAAAAAAAAAAXAAEAAAAAAAAAAAAXAA8AAAAAAAAAAAAYAAEAAAAAAAAAAAAYAA8AAAAAAAAAAAAZAAEAAAAAAAAAAAAZAA8AAAAAAAAAAAAaAAEAAAAAAAAAAAAaAA8AAAAAAAAAAAAbAAEAAAAAAAAAAAAbAA8AAAAAAAAAAAAcAAEAAAAAAAAAAAAcAA8AAAAAAAAAAAAdAAEAAAAAAAAAAAAdAA8AAAAAAAAAAAAeAAEAAAAAAAAAAAAeAA8AAAAAAAAAAAA=")
 tile_set = ExtResource("2_rpqeg")
-
-[node name="Entities" parent="." unique_id=404293091 instance=ExtResource("3_oeon4")]
-
-[node name="MovingBlock" parent="Entities" index="0" unique_id=443394162]
-position = Vector2(320, 128)
-curve = SubResource("Curve2D_1sruj")
-script = ExtResource("4_hf3ra")
-follow_speed = 20.0
-
-[node name="MovingBlock2" parent="Entities" index="1" unique_id=414594447]
-position = Vector2(256, 128)
-curve = SubResource("Curve2D_5hted")
-script = ExtResource("4_hf3ra")
-follow_speed = 20.0
-
-[node name="MovingBlock3" parent="Entities" index="2" unique_id=756412396]
-position = Vector2(192, 128)
-curve = SubResource("Curve2D_ya1j8")
-script = ExtResource("4_hf3ra")
-follow_speed = 20.0
-
-[node name="MovingBlock4" parent="Entities" unique_id=1832238303 instance=ExtResource("5_q1uxb")]
-position = Vector2(128, 64)
-curve = SubResource("Curve2D_30lba")
-
-[editable path="Entities"]
