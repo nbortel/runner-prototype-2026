@@ -31,3 +31,15 @@ shape = SubResource("RectangleShape2D_ukvlg")
 anchor_mode = 0
 script = ExtResource("4_kv16r")
 target_node = NodePath("../PlayerCharacter")
+
+[node name="UI" type="Control" parent="Camera2D" unique_id=1572215213]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreIndicator" type="Label" parent="Camera2D/UI" unique_id=1306620403]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: "

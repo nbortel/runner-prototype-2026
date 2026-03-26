@@ -3,12 +3,15 @@ extends Node2D
 const CHUNK_WIDTH: int = 480
 const TILE_SIZE: int = 16
 const MAX_LOADED_CHUNKS = 10
+
 var chunk_queue: Array[Node] = []
 var next_chunk_id: int = 0
 var player_reference: CharacterBody2D = null
 
 var chunk_name_list: Array[String] = ["chunk_1", "chunk_2", "chunk_3"]
 
+var score: int = 0
+var game_over_screen: PackedScene = preload("res://scenes/game_over_screen.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +25,15 @@ func _process(_delta: float) -> void:
 	if player_reference.position.distance_to(last_chunk.position) < 2 * CHUNK_WIDTH:
 		var chunk_name: String = chunk_name_list[randi_range(0, len(chunk_name_list) - 1)]
 		add_chunk(chunk_name)
+	update_score()
+	if player_reference.velocity == Vector2.ZERO:
+		game_over()
+
+
+func update_score() -> void:
+	score = int(player_reference.position.x / 10)
+	var score_label: Label = $Camera2D/UI/ScoreIndicator
+	score_label.text = "Score: " + str(score)
 
 
 # Pop and return front chunk if max chunks exceeded
@@ -92,6 +104,13 @@ func load_chunk_tiles(chunk_name: String) -> Dictionary:
 		return {}
 
 
+func game_over() -> void:
+	var game_over_instance: GameOverScreen = game_over_screen.instantiate()
+	game_over_instance.score = score
+	get_tree().get_root().add_child(game_over_instance)
+	get_tree().current_scene.queue_free()
+
+
 class Chunk:
 	extends Node2D
 	var entities: Node
@@ -126,5 +145,3 @@ class Chunk:
 				var coord_as_string: String = tile_data[tile][1]
 				var atlas_coordinate: Vector2i = HelperFunctions.string_to_vector2i(coord_as_string)
 				tile_map_layer.set_cell(tile_vector, source_id, atlas_coordinate)
-	
-	

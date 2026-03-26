@@ -34,3 +34,4 @@ func _process(_delta: float) -> void:
 				get_tree().change_scene_to_packed(the_world)
 			"ExitGameIndicator":
 				get_tree().quit()
+		queue_free()

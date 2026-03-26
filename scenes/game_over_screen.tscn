@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://omujpfs1fuk8"]
+
+[ext_resource type="Script" uid="uid://c4wg2buw87inu" path="res://scenes/game_over_screen.gd" id="1_iwahs"]
+
+[node name="GameOverScreen" type="Control" unique_id=1605035274]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwahs")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=9274723]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 272.0
+
+[node name="Label" type="Label" parent="CenterContainer" unique_id=1090757184]
+layout_mode = 2
+text = "Game Over
+Final Score: "
+horizontal_alignment = 1
+vertical_alignment = 1
