@@ -4,7 +4,7 @@ const CHUNK_WIDTH: int = 480
 const TILE_SIZE: int = 16
 const MAX_LOADED_CHUNKS = 10
 
-var chunk_queue: Array[Node] = []
+var chunk_queue: Array[Chunk] = []
 var next_chunk_id: int = 0
 var player_reference: PlayerCharacter = null
 
@@ -30,7 +30,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	var last_chunk: Node2D = chunk_queue[-1]
+	var last_chunk: Chunk = chunk_queue[-1]
 	if player_reference.position.distance_to(last_chunk.position) < 2 * CHUNK_WIDTH:
 		var chunk_name: String = chunk_name_list[randi_range(0, len(chunk_name_list) - 1)]
 		add_chunk(chunk_name)
@@ -58,64 +58,33 @@ func check_chunk_count() -> Chunk:
 		return null
 
 
+## Spawn in a new chunk at the end of the current list
 func add_chunk(chunk_name: String = "default") -> void:
 	# Load entities from tscn
-	var new_chunk_entities: Node2D = load_chunk_entities(chunk_name)
-	if new_chunk_entities:
-		new_chunk_entities.name = chunk_name + "_" + str(next_chunk_id) + "_entities"
-	else:
-		push_error("Null value for chunk entitites from " + chunk_name + "tscn")
-	# Load tile data from json
-	var new_chunk_tile_data: Dictionary = load_chunk_tiles(chunk_name)
-	# Pass data into new chunk instance
-	var tile_map_layer: TileMapLayer = get_node("TileMapLayer")
-	var new_chunk: Chunk = Chunk.new(new_chunk_entities, new_chunk_tile_data, next_chunk_id, tile_map_layer)
+	var new_chunk: Chunk = load_chunk(chunk_name)
+	new_chunk.chunk_id = next_chunk_id
 	new_chunk.position = Vector2i(new_chunk.chunk_id * CHUNK_WIDTH, 0)
 	new_chunk.name = chunk_name + "_" + str(next_chunk_id)
+	
+	var tile_map_layer: TileMapLayer = get_node("TileMapLayer")
+	HelperFunctions.draw_tiles(tile_map_layer, new_chunk.tile_data, new_chunk.position_tile)
+	
 	# Add chunk as child and reference to list
 	add_child(new_chunk)
 	chunk_queue.push_back(new_chunk)
+	
 	var check_count: Chunk = check_chunk_count()
 	if check_count:
 		check_count.queue_free()
 	next_chunk_id += 1
 
 
-## Instantiate entities within the chunk
-func load_chunk_entities(chunk_name: String = "default") -> Node2D:
+## Instantiate packed chunk
+func load_chunk(chunk_name: String = "default") -> Chunk:
 	var file_path: String = "res://chunks/" + chunk_name + ".tscn"
 	var packed_scene: PackedScene = load(file_path)
-	var packed_entities: Node2D = packed_scene.instantiate()
-	if typeof(packed_entities) == typeof(Node2D):
-		return packed_entities
-	else:
-		push_error("Could not load entities from chunk: " + chunk_name + ".tscn\nWrong node type.")
-		return null
-
-
-## Draw tiles within the chunk to the TileMapLayer
-func load_chunk_tiles(chunk_name: String) -> Dictionary:
-	var file_path: String = "res://chunks/" + chunk_name + ".json"
-	var file: FileAccess = FileAccess.open(file_path, FileAccess.READ)
-	
-	var json: JSON = JSON.new()
-	var json_string: String = file.get_line()
-	
-	var error: Error = json.parse(json_string)
-	if error == OK:
-		var data_received: Variant = json.data
-		if typeof(data_received) == TYPE_DICTIONARY:
-			var cell_data: Dictionary = data_received
-			return cell_data
-		else:
-			push_error("unexpected data in JSON; cannot load tile data")
-			return {}
-	else:
-		print(
-			"JSON Parse Error: ", json.get_error_message(), " in ", 
-			json_string, " at line ", json.get_error_line()
-		)
-		return {}
+	var loaded_chunk: Chunk = packed_scene.instantiate()
+	return loaded_chunk
 
 
 func game_over() -> void:

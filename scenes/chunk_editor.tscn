@@ -1,23 +1,11 @@
-[gd_scene format=4 uid="uid://fyhwiss42cio"]
+[gd_scene format=3 uid="uid://fyhwiss42cio"]
 
 [ext_resource type="Script" uid="uid://b1x0w06lgwvt1" path="res://scenes/chunk_editor.gd" id="1_rpqeg"]
 [ext_resource type="TileSet" uid="uid://be6u8po13ikfd" path="res://resources/main_tileset.tres" id="2_rpqeg"]
-[ext_resource type="Script" uid="uid://b1xivo3u7yrj" path="res://chunks/chunk.gd" id="3_jwcf6"]
-[ext_resource type="PackedScene" uid="uid://cixq8xynh66dd" path="res://scenes/entities/score_pickup.tscn" id="4_hf3ra"]
 
 [node name="ChunkEditor" type="Node2D" unique_id=1612492083]
 script = ExtResource("1_rpqeg")
+chunk_to_load = "uid://c7fknorvkvqs1"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1138750515]
-tile_map_data = PackedByteArray("AAAAAA8AAAAAAAAAAAABAA8AAAAAAAAAAAACAA8AAAAAAAAAAAADAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAAFAA8AAAAAAAAAAAAGAA8AAAAAAAAAAAAHAA8AAAAAAAAAAAAIAA8AAAAAAAAAAAAJAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAALAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAATAA8AAAAAAAAAAAAUAA8AAAAAAAAAAAAVAA8AAAAAAAAAAAAWAA8AAAAAAAAAAAAXAA8AAAAAAAAAAAAYAA8AAAAAAAAAAAAZAA8AAAAAAAAAAAAaAA8AAAAAAAAAAAAbAA8AAAAAAAAAAAAcAA8AAAAAAAAAAAAdAA8AAAAAAAAAAAAMAA4AAAAAAAAAAAAMAA0AAAAAAAAAAAAMAAwAAAAAAAAAAAANAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAAPAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAARAAwAAAAAAAAAAAASAAwAAAAAAAAAAAATAAwAAAAAAAAAAAATAA4AAAAAAAAAAAATAA0AAAAAAAAAAAA=")
 tile_set = ExtResource("2_rpqeg")
-
-[node name="Chunk" type="Node2D" parent="." unique_id=1485843946]
-script = ExtResource("3_jwcf6")
-metadata/_custom_type_script = "uid://b1xivo3u7yrj"
-
-[node name="ScorePickup" parent="Chunk" unique_id=1690499905 instance=ExtResource("4_hf3ra")]
-position = Vector2(208, 176)
-
-[node name="ScorePickup2" parent="Chunk" unique_id=1721681213 instance=ExtResource("4_hf3ra")]
-position = Vector2(296, 176)
