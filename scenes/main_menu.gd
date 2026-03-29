@@ -20,15 +20,15 @@ func _process(_delta: float) -> void:
 			button.visible = true
 		else:
 			button.visible = false
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("menu_up"):
 		if current_selection_index > 0:
 			current_selection_index -= 1
 			current_selection = button_list[current_selection_index]
-	elif Input.is_action_just_pressed("ui_down"):
+	elif Input.is_action_just_pressed("menu_down"):
 		if current_selection_index < len(button_list) - 1:
 			current_selection_index += 1
 			current_selection = button_list[current_selection_index]
-	elif Input.is_action_just_pressed("ui_accept"):
+	elif Input.is_action_just_pressed("menu_confirm"):
 		match current_selection.name:
 			"StartGameIndicator":
 				get_tree().change_scene_to_packed(the_world)
