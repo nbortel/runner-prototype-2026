@@ -5,7 +5,7 @@
 
 [node name="ChunkEditor" type="Node2D" unique_id=1612492083]
 script = ExtResource("1_rpqeg")
-chunk_name = "chunk_1"
+chunk_to_load = "uid://c7fknorvkvqs1"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1138750515]
 tile_set = ExtResource("2_rpqeg")

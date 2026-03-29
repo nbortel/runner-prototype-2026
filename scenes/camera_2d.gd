@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if target_node != null:
 		position.x = target_node.position.x + OFFSET_X
 		#position.y = target_node.position.y + OFFSET_Y
