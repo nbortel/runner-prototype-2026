@@ -20,10 +20,9 @@ static func string_to_vector2i(string := "") -> Vector2i:
 ## Offset allows a set of tiles to be drawn at a relative position rather than absolute
 static func draw_tiles(tile_map_layer: TileMapLayer, tile_data: Dictionary, offset: Vector2i = Vector2i.ZERO) -> void:
 	for tile: Vector2i in tile_data:
-		tile += offset
 		var source_id: int = tile_data[tile][0]
 		var atlas_coordinate: Vector2i = tile_data[tile][1]
-		tile_map_layer.set_cell(tile, source_id, atlas_coordinate)
+		tile_map_layer.set_cell(tile + offset, source_id, atlas_coordinate)
 
 
 ## Read basic tile data to a Dictionary and return the result.
