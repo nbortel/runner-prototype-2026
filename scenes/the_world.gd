@@ -123,39 +123,3 @@ func game_over() -> void:
 	game_over_instance.score = score
 	get_tree().get_root().add_child(game_over_instance)
 	get_tree().current_scene.queue_free()
-
-
-class Chunk:
-	extends Node2D
-	var entities: Node
-	var tile_data: Dictionary
-	var chunk_id: int
-	var tile_position: Vector2i:
-		get():
-			return self.position / TILE_SIZE
-		set(value):
-			self.position = value * TILE_SIZE
-	var tile_map_layer: TileMapLayer
-	
-	@warning_ignore("shadowed_variable")
-	func _init(entities: Node2D, tile_data: Dictionary, chunk_id: int, tile_map_layer: TileMapLayer) -> void:
-		self.entities = entities
-		add_child(entities)
-		self.tile_data = tile_data
-		self.chunk_id = chunk_id
-		self.tile_map_layer = tile_map_layer
-	
-	
-	func _ready() -> void:
-		draw_tiles()
-	
-	
-	func draw_tiles() -> void:
-		for tile: String in tile_data:
-			var tile_vector: Vector2i = HelperFunctions.string_to_vector2i(tile)
-			if tile_vector:
-				tile_vector += tile_position
-				var source_id: int = tile_data[tile][0]
-				var coord_as_string: String = tile_data[tile][1]
-				var atlas_coordinate: Vector2i = HelperFunctions.string_to_vector2i(coord_as_string)
-				tile_map_layer.set_cell(tile_vector, source_id, atlas_coordinate)
