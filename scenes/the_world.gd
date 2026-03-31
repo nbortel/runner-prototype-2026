@@ -1,8 +1,8 @@
 extends Node2D
 
-const CHUNK_WIDTH: int = 480
-const TILE_SIZE: int = 16
 const MAX_LOADED_CHUNKS = 10
+
+var death_height: int = Constants.CHUNK_HEIGHT
 
 var chunk_queue: Array[Chunk] = []
 var next_chunk_id: int = 0
@@ -31,10 +31,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	var last_chunk: Chunk = chunk_queue[-1]
-	if player_reference.position.distance_to(last_chunk.position) < 2 * CHUNK_WIDTH:
+	if player_reference.position.distance_to(last_chunk.position) < 2 * Constants.CHUNK_WIDTH:
 		var chunk_name: String = chunk_name_list[randi_range(0, len(chunk_name_list) - 1)]
 		add_chunk(chunk_name)
-	if player_reference.velocity.x == 0:
+	if player_reference.velocity.x == 0 or player_reference.position.y >= death_height:
 		game_over()
 
 
@@ -63,7 +63,7 @@ func add_chunk(chunk_name: String = "default") -> void:
 	# Load entities from tscn
 	var new_chunk: Chunk = load_chunk(chunk_name)
 	new_chunk.chunk_id = next_chunk_id
-	new_chunk.position = Vector2i(new_chunk.chunk_id * CHUNK_WIDTH, 0)
+	new_chunk.position = Vector2i(new_chunk.chunk_id * Constants.CHUNK_WIDTH, 0)
 	new_chunk.name = chunk_name + "_" + str(next_chunk_id)
 	
 	var tile_map_layer: TileMapLayer = get_node("TileMapLayer")
