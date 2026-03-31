@@ -13,6 +13,9 @@ extends CharacterBody2D
 
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = true
+		return
 	# Add the gravity.
 	if not is_on_floor() and gravity_on:
 		if not(Input.is_action_pressed("jump")) and velocity.y < 0:

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cb35fbv76ft13" path="res://scenes/player_character.gd" id="2_cdqyx"]
 [ext_resource type="Texture2D" uid="uid://1wy375rbrr1o" path="res://assets/placeholder/player_hitbox.png" id="2_ukvlg"]
 [ext_resource type="Script" uid="uid://ce066psfknbxf" path="res://scenes/camera_2d.gd" id="4_kv16r"]
+[ext_resource type="Script" uid="uid://bfqitjbey0n7r" path="res://scenes/pause_menu.gd" id="6_rm305"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m77hu"]
 radius = 6.0
@@ -44,3 +45,24 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Score: "
+
+[node name="PauseMenu" type="Control" parent="Camera2D/UI" unique_id=131559021]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_rm305")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/UI/PauseMenu" unique_id=1760212281]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 272.0
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Label" type="Label" parent="Camera2D/UI/PauseMenu" unique_id=1731478990]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 272.0
+text = "Game Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
