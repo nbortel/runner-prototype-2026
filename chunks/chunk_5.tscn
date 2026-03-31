@@ -1,19 +1,10 @@
-[gd_scene format=3 uid="uid://fyhwiss42cio"]
+[gd_scene format=3 uid="uid://bxau0in1jgrjx"]
 
-[ext_resource type="Script" uid="uid://b1x0w06lgwvt1" path="res://scenes/chunk_editor.gd" id="1_rpqeg"]
-[ext_resource type="TileSet" uid="uid://be6u8po13ikfd" path="res://resources/main_tileset.tres" id="2_rpqeg"]
-[ext_resource type="Script" uid="uid://b1xivo3u7yrj" path="res://chunks/chunk.gd" id="3_oeon4"]
+[ext_resource type="Script" uid="uid://b1xivo3u7yrj" path="res://chunks/chunk.gd" id="1_f4l2b"]
+[ext_resource type="PackedScene" uid="uid://cixq8xynh66dd" path="res://scenes/entities/score_pickup.tscn" id="2_gby4l"]
 
-[node name="ChunkEditor" type="Node2D" unique_id=1612492083 node_paths=PackedStringArray("chunk")]
-script = ExtResource("1_rpqeg")
-chunk = NodePath("TileMapLayer/chunk_5")
-chunk_to_load = "uid://bxau0in1jgrjx"
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1138750515]
-tile_set = ExtResource("2_rpqeg")
-
-[node name="chunk_5" type="Node2D" parent="TileMapLayer" unique_id=696114187]
-script = ExtResource("3_oeon4")
+[node name="chunk_5" type="Node2D" unique_id=696114187]
+script = ExtResource("1_f4l2b")
 tile_data = {
 Vector2i(0, 15): [2, Vector2i(1, 0)],
 Vector2i(1, 15): [2, Vector2i(1, 0)],
@@ -64,3 +55,9 @@ Vector2i(28, 15): [2, Vector2i(1, 0)],
 Vector2i(29, 15): [2, Vector2i(1, 0)]
 }
 metadata/_custom_type_script = "uid://b1xivo3u7yrj"
+
+[node name="ScorePickup" parent="." unique_id=1690499905 instance=ExtResource("2_gby4l")]
+position = Vector2(109, 160)
+
+[node name="ScorePickup2" parent="." unique_id=1126162911 instance=ExtResource("2_gby4l")]
+position = Vector2(364, 163)

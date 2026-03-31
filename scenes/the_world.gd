@@ -8,7 +8,7 @@ var chunk_queue: Array[Chunk] = []
 var next_chunk_id: int = 0
 var player_reference: PlayerCharacter = null
 
-var chunk_name_list: Array[String] = ["default", "chunk_1", "chunk_2", "chunk_3", "chunk_4"]
+var chunk_name_list: Array[String] = ["default", "chunk_1", "chunk_2", "chunk_3", "chunk_4", "chunk_5"]
 
 var score: int = 0
 var score_timer: Timer
