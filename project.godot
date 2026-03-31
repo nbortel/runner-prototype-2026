@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalSignals="*uid://c52d7ko3dyudr"
 Constants="*uid://cfobkhmmag3d2"
+ChunkManager="*uid://bwhjuokco3t4n"
 
 [debug]
 
