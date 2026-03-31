@@ -2,51 +2,84 @@
 
 [ext_resource type="Script" uid="uid://b1xivo3u7yrj" path="res://chunks/chunk.gd" id="1_5hted"]
 [ext_resource type="PackedScene" uid="uid://cixq8xynh66dd" path="res://scenes/entities/score_pickup.tscn" id="2_ya1j8"]
+[ext_resource type="Script" uid="uid://nm2loet54syx" path="res://scenes/entities/score_pickup.gd" id="3_ya1j8"]
 
 [node name="Chunk_1" type="Node2D" unique_id=1485843946]
 script = ExtResource("1_5hted")
 tile_data = {
-Vector2i(0, 15): [0, Vector2i(0, 0)],
-Vector2i(1, 15): [0, Vector2i(0, 0)],
-Vector2i(2, 15): [0, Vector2i(0, 0)],
-Vector2i(3, 15): [0, Vector2i(0, 0)],
-Vector2i(4, 15): [0, Vector2i(0, 0)],
-Vector2i(5, 15): [0, Vector2i(0, 0)],
-Vector2i(6, 15): [0, Vector2i(0, 0)],
-Vector2i(7, 15): [0, Vector2i(0, 0)],
-Vector2i(8, 15): [0, Vector2i(0, 0)],
-Vector2i(9, 15): [0, Vector2i(0, 0)],
-Vector2i(10, 15): [0, Vector2i(0, 0)],
-Vector2i(11, 15): [0, Vector2i(0, 0)],
-Vector2i(12, 12): [0, Vector2i(0, 0)],
+Vector2i(0, 14): [2, Vector2i(1, 0)],
+Vector2i(0, 15): [2, Vector2i(1, 1)],
+Vector2i(1, 14): [2, Vector2i(1, 0)],
+Vector2i(1, 15): [2, Vector2i(1, 1)],
+Vector2i(2, 14): [2, Vector2i(1, 0)],
+Vector2i(2, 15): [2, Vector2i(1, 1)],
+Vector2i(3, 14): [2, Vector2i(1, 0)],
+Vector2i(3, 15): [2, Vector2i(1, 1)],
+Vector2i(4, 14): [2, Vector2i(1, 0)],
+Vector2i(4, 15): [2, Vector2i(1, 1)],
+Vector2i(5, 14): [2, Vector2i(1, 0)],
+Vector2i(5, 15): [2, Vector2i(1, 1)],
+Vector2i(6, 14): [2, Vector2i(1, 0)],
+Vector2i(6, 15): [2, Vector2i(1, 1)],
+Vector2i(7, 14): [2, Vector2i(1, 0)],
+Vector2i(7, 15): [2, Vector2i(1, 1)],
+Vector2i(8, 14): [2, Vector2i(1, 0)],
+Vector2i(8, 15): [2, Vector2i(1, 1)],
+Vector2i(9, 14): [2, Vector2i(1, 0)],
+Vector2i(9, 15): [2, Vector2i(1, 1)],
+Vector2i(10, 14): [2, Vector2i(1, 0)],
+Vector2i(10, 15): [2, Vector2i(1, 1)],
+Vector2i(11, 14): [2, Vector2i(1, 0)],
+Vector2i(11, 15): [2, Vector2i(1, 1)],
+Vector2i(12, 11): [2, Vector2i(1, 0)],
+Vector2i(12, 12): [2, Vector2i(1, 1)],
 Vector2i(12, 13): [0, Vector2i(0, 0)],
 Vector2i(12, 14): [0, Vector2i(0, 0)],
 Vector2i(12, 15): [0, Vector2i(0, 0)],
-Vector2i(13, 12): [0, Vector2i(0, 0)],
-Vector2i(14, 12): [0, Vector2i(0, 0)],
-Vector2i(15, 12): [0, Vector2i(0, 0)],
-Vector2i(16, 12): [0, Vector2i(0, 0)],
-Vector2i(17, 12): [0, Vector2i(0, 0)],
-Vector2i(18, 12): [0, Vector2i(0, 0)],
-Vector2i(19, 12): [0, Vector2i(0, 0)],
+Vector2i(13, 11): [2, Vector2i(1, 0)],
+Vector2i(13, 12): [2, Vector2i(1, 1)],
+Vector2i(14, 11): [2, Vector2i(1, 0)],
+Vector2i(14, 12): [2, Vector2i(1, 1)],
+Vector2i(15, 11): [2, Vector2i(1, 0)],
+Vector2i(15, 12): [2, Vector2i(1, 1)],
+Vector2i(16, 11): [2, Vector2i(1, 0)],
+Vector2i(16, 12): [2, Vector2i(1, 1)],
+Vector2i(17, 11): [2, Vector2i(1, 0)],
+Vector2i(17, 12): [2, Vector2i(1, 1)],
+Vector2i(18, 11): [2, Vector2i(1, 0)],
+Vector2i(18, 12): [2, Vector2i(1, 1)],
+Vector2i(19, 11): [2, Vector2i(1, 0)],
+Vector2i(19, 12): [2, Vector2i(1, 1)],
 Vector2i(19, 13): [0, Vector2i(0, 0)],
 Vector2i(19, 14): [0, Vector2i(0, 0)],
 Vector2i(19, 15): [0, Vector2i(0, 0)],
-Vector2i(20, 15): [0, Vector2i(0, 0)],
-Vector2i(21, 15): [0, Vector2i(0, 0)],
-Vector2i(22, 15): [0, Vector2i(0, 0)],
-Vector2i(23, 15): [0, Vector2i(0, 0)],
-Vector2i(24, 15): [0, Vector2i(0, 0)],
-Vector2i(25, 15): [0, Vector2i(0, 0)],
-Vector2i(26, 15): [0, Vector2i(0, 0)],
-Vector2i(27, 15): [0, Vector2i(0, 0)],
-Vector2i(28, 15): [0, Vector2i(0, 0)],
-Vector2i(29, 15): [0, Vector2i(0, 0)]
+Vector2i(20, 14): [2, Vector2i(1, 0)],
+Vector2i(20, 15): [2, Vector2i(1, 1)],
+Vector2i(21, 14): [2, Vector2i(1, 0)],
+Vector2i(21, 15): [2, Vector2i(1, 1)],
+Vector2i(22, 14): [2, Vector2i(1, 0)],
+Vector2i(22, 15): [2, Vector2i(1, 1)],
+Vector2i(23, 14): [2, Vector2i(1, 0)],
+Vector2i(23, 15): [2, Vector2i(1, 1)],
+Vector2i(24, 14): [2, Vector2i(1, 0)],
+Vector2i(24, 15): [2, Vector2i(1, 1)],
+Vector2i(25, 14): [2, Vector2i(1, 0)],
+Vector2i(25, 15): [2, Vector2i(1, 1)],
+Vector2i(26, 14): [2, Vector2i(1, 0)],
+Vector2i(26, 15): [2, Vector2i(1, 1)],
+Vector2i(27, 14): [2, Vector2i(1, 0)],
+Vector2i(27, 15): [2, Vector2i(1, 1)],
+Vector2i(28, 14): [2, Vector2i(1, 0)],
+Vector2i(28, 15): [2, Vector2i(1, 1)],
+Vector2i(29, 14): [2, Vector2i(1, 0)],
+Vector2i(29, 15): [2, Vector2i(1, 1)]
 }
 metadata/_custom_type_script = "uid://b1xivo3u7yrj"
 
-[node name="ScorePickup" parent="." unique_id=1690499905 instance=ExtResource("2_ya1j8")]
+[node name="ScorePickup" type="Area2D" parent="." unique_id=1690499905 instance=ExtResource("2_ya1j8")]
 position = Vector2(208, 176)
+script = ExtResource("3_ya1j8")
 
-[node name="ScorePickup2" parent="." unique_id=1721681213 instance=ExtResource("2_ya1j8")]
+[node name="ScorePickup2" type="Area2D" parent="." unique_id=1721681213 instance=ExtResource("2_ya1j8")]
 position = Vector2(296, 176)
+script = ExtResource("3_ya1j8")
