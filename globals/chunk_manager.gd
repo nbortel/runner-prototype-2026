@@ -3,10 +3,15 @@ extends Node
 
 var chunk_queue: Array[Chunk] = []
 var next_chunk_id: int = 0
+var chunk_name_list: Array[String] = ["default", "chunk_1", "chunk_2", "chunk_3", "chunk_4"]
+var upcoming_chunks: Array[String] = []
+
 var player_reference: PlayerCharacter = null
 var tile_map_layer: TileMapLayer = null
 
-var chunk_name_list: Array[String] = ["default", "chunk_1", "chunk_2", "chunk_3", "chunk_4"]
+
+func _ready() -> void:
+	upcoming_chunks = ChunkSequences.test_sequence.duplicate()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,7 +22,11 @@ func _process(_delta: float) -> void:
 		add_chunk()
 	var last_chunk: Chunk = chunk_queue[-1]
 	if player_reference.position.distance_to(last_chunk.position) < 2 * Constants.CHUNK_WIDTH:
-		var chunk_name: String = chunk_name_list[randi_range(0, len(chunk_name_list) - 1)]
+		var chunk_name: String
+		if len(upcoming_chunks) > 0:
+			chunk_name = upcoming_chunks.pop_front()
+		else:
+			chunk_name = chunk_name_list[randi_range(0, len(chunk_name_list) - 1)]
 		add_chunk(chunk_name)
 
 
