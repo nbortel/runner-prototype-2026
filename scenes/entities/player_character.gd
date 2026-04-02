@@ -22,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	if override_vector != Vector2.ZERO:
 		velocity = override_vector
 		move_and_slide()
+		override_vector = Vector2.ZERO
 		return
 
 	# Handle y movement

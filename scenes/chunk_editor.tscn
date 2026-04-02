@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dwcsqwfjnjsjw" path="res://chunks/jumppadtestchunk.tscn" id="4_30lba"]
 [ext_resource type="PackedScene" uid="uid://bqtejkkyuw6gx" path="res://scenes/entities/player_character.tscn" id="4_jwcf6"]
 
-[node name="ChunkEditor" type="Node2D" unique_id=1612492083]
+[node name="ChunkEditor" type="Node2D" unique_id=1612492083 node_paths=PackedStringArray("chunk")]
 script = ExtResource("1_rpqeg")
+chunk = NodePath("JumpPadTestChunk")
 chunk_to_load = "uid://dwcsqwfjnjsjw"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1138750515]
@@ -14,6 +15,10 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAABAAAAAAAAAAA
 tile_set = ExtResource("2_rpqeg")
 
 [node name="JumpPadTestChunk" parent="." unique_id=1506391303 instance=ExtResource("4_30lba")]
+
+[node name="JumpPad" parent="JumpPadTestChunk" index="0" unique_id=1815341596]
+position = Vector2(112, 232)
+desired_tile_height = 12
 
 [node name="PlayerCharacter" parent="." unique_id=1688987632 instance=ExtResource("4_jwcf6")]
 position = Vector2(32, 224)
