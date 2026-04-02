@@ -7,7 +7,7 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rpqeg"]
 texture = ExtResource("1_us7br")
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.71943474, 8, -0.71943474, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mscir"]
 texture = ExtResource("2_u6xvd")

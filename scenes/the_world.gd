@@ -6,11 +6,11 @@ var death_height: int = Constants.CHUNK_HEIGHT
 
 var player_reference: PlayerCharacter = null
 
-<<<<<<< HEAD
-var chunk_name_list: Array[String] = ["default", "chunk_1", "chunk_2", "chunk_3", "chunk_4", "chunk_5"]
+#<<<<<<< HEAD
+var chunk_name_list: Array[String] = ["default", "chunk_1", "chunk_2", "chunk_3", "chunk_4", "chunk_5", "chunk_6"]
 
-=======
->>>>>>> main
+#=======
+#>>>>>>> main
 var score: int = 0
 var score_timer: Timer
 var score_timer_interval: float = 0.5
