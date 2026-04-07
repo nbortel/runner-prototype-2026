@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://1wy375rbrr1o" path="res://assets/placeholder/player_hitbox.png" id="2_ukvlg"]
 [ext_resource type="Script" uid="uid://ce066psfknbxf" path="res://scenes/camera_2d.gd" id="4_kv16r"]
 [ext_resource type="Script" uid="uid://bfqitjbey0n7r" path="res://scenes/pause_menu.gd" id="6_rm305"]
-[ext_resource type="Texture2D" uid="uid://ba7jyja2fw625" path="res://assets/Clouds.png" id="7_wuewr"]
-[ext_resource type="Texture2D" uid="uid://dddng587u8107" path="res://assets/Fog.png" id="8_7y48h"]
-[ext_resource type="Texture2D" uid="uid://e6u2ol1rql72" path="res://assets/Buildings.png" id="9_jgl6x"]
+[ext_resource type="Texture2D" uid="uid://ba7jyja2fw625" path="res://assets/clouds.png" id="7_wuewr"]
+[ext_resource type="Texture2D" uid="uid://dddng587u8107" path="res://assets/fog.png" id="8_7y48h"]
+[ext_resource type="Texture2D" uid="uid://e6u2ol1rql72" path="res://assets/buildings.png" id="9_jgl6x"]
+[ext_resource type="Texture2D" uid="uid://eedj2ujkkeny" path="res://assets/Base.png" id="10_7y48h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m77hu"]
 radius = 6.0
@@ -70,33 +71,41 @@ text = "Game Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="parallax_background" type="Node2D" parent="." unique_id=1466682680]
+[node name="ParallaxBackground" type="Node2D" parent="." unique_id=1466682680]
 
-[node name="area_1" type="Node2D" parent="parallax_background" unique_id=446099309]
+[node name="Area1" type="Node2D" parent="ParallaxBackground" unique_id=446099309]
 
-[node name="clouds" type="Parallax2D" parent="parallax_background/area_1" unique_id=949098261]
+[node name="Clouds" type="Parallax2D" parent="ParallaxBackground/Area1" unique_id=949098261]
 scroll_scale = Vector2(0.5, 0.5)
 repeat_size = Vector2(960, 0)
 
-[node name="clouds" type="Sprite2D" parent="parallax_background/area_1/clouds" unique_id=2039148917]
-z_index = -4094
+[node name="Clouds" type="Sprite2D" parent="ParallaxBackground/Area1/Clouds" unique_id=2039148917]
+z_index = -4093
 position = Vector2(480, 135)
 texture = ExtResource("7_wuewr")
 
-[node name="fog" type="Parallax2D" parent="parallax_background/area_1" unique_id=345361300]
+[node name="Fog" type="Parallax2D" parent="ParallaxBackground/Area1" unique_id=345361300]
 scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(960, 0)
 
-[node name="fog" type="Sprite2D" parent="parallax_background/area_1/fog" unique_id=1666214180]
-z_index = -4096
+[node name="Fog" type="Sprite2D" parent="ParallaxBackground/Area1/Fog" unique_id=1666214180]
+z_index = -4095
 position = Vector2(480, 135)
 texture = ExtResource("8_7y48h")
 
-[node name="buildings" type="Parallax2D" parent="parallax_background/area_1" unique_id=1586848454]
-scroll_scale = Vector2(0.7, 0.7)
+[node name="Buildings" type="Parallax2D" parent="ParallaxBackground/Area1" unique_id=1586848454]
+scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(960, 0)
 
-[node name="buildings" type="Sprite2D" parent="parallax_background/area_1/buildings" unique_id=2042055378]
-z_index = -4096
+[node name="Buildings" type="Sprite2D" parent="ParallaxBackground/Area1/Buildings" unique_id=2042055378]
+z_index = -4094
 position = Vector2(480, 135)
 texture = ExtResource("9_jgl6x")
+
+[node name="BaseBackground" type="Parallax2D" parent="ParallaxBackground/Area1" unique_id=1464097680]
+scroll_scale = Vector2(0, 0)
+
+[node name="BaseBackground" type="Sprite2D" parent="ParallaxBackground/Area1/BaseBackground" unique_id=56236629]
+z_index = -4096
+position = Vector2(240, 135)
+texture = ExtResource("10_7y48h")
