@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cikwyi1plnct4"]
+
+[ext_resource type="Texture2D" uid="uid://ba7jyja2fw625" path="res://assets/Clouds.png" id="1_6h8ff"]
+[ext_resource type="Texture2D" uid="uid://dddng587u8107" path="res://assets/Fog.png" id="2_2pwms"]
+[ext_resource type="Texture2D" uid="uid://e6u2ol1rql72" path="res://assets/Buildings.png" id="3_xoild"]
+
+[node name="parallax_background" type="Node2D" unique_id=1169838151]
+
+[node name="area_1" type="Node2D" parent="." unique_id=880533277]
+
+[node name="clouds" type="Parallax2D" parent="area_1" unique_id=202996791]
+
+[node name="clouds" type="Sprite2D" parent="area_1/clouds" unique_id=854293263]
+z_index = -4094
+position = Vector2(480, 135)
+texture = ExtResource("1_6h8ff")
+
+[node name="fog" type="Parallax2D" parent="area_1" unique_id=735744815]
+
+[node name="fog" type="Sprite2D" parent="area_1/fog" unique_id=1596458650]
+z_index = -4095
+position = Vector2(480, 135)
+texture = ExtResource("2_2pwms")
+
+[node name="buildings" type="Parallax2D" parent="area_1" unique_id=1748851981]
+
+[node name="buildings" type="Sprite2D" parent="area_1/buildings" unique_id=1642458019]
+z_index = -4096
+position = Vector2(480, 135)
+texture = ExtResource("3_xoild")
