@@ -1,8 +1,8 @@
 [gd_resource type="TileSet" format=3 uid="uid://be6u8po13ikfd"]
 
 [ext_resource type="Texture2D" uid="uid://y14q8nq6upb0" path="res://assets/basic_ground1_single.png" id="1_us7br"]
-[ext_resource type="Texture2D" uid="uid://bdsjeks8uog4p" path="res://assets/tileset.png" id="3_u6xvd"]
-[ext_resource type="Texture2D" uid="uid://c7wan4gkukpgb" path="res://assets/pillar_support1.png" id="4_mscir"]
+[ext_resource type="Texture2D" uid="uid://c7wan4gkukpgb" path="res://assets/pillar_support1.png" id="2_u6xvd"]
+[ext_resource type="Texture2D" uid="uid://bdsjeks8uog4p" path="res://assets/tileset.png" id="3_mscir"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rpqeg"]
 texture = ExtResource("1_us7br")
@@ -10,12 +10,12 @@ texture = ExtResource("1_us7br")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.71943474, 8, -0.71943474, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_shghf"]
-texture = ExtResource("4_mscir")
+texture = ExtResource("2_u6xvd")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mscir"]
-texture = ExtResource("3_u6xvd")
+texture = ExtResource("3_mscir")
 4:0/0 = 0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/0 = 0
