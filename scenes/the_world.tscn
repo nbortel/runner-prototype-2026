@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://ce066psfknbxf" path="res://scenes/camera_2d.gd" id="4_kv16r"]
 [ext_resource type="Script" uid="uid://bfqitjbey0n7r" path="res://scenes/pause_menu.gd" id="6_rm305"]
 [ext_resource type="Texture2D" uid="uid://ba7jyja2fw625" path="res://assets/clouds.png" id="7_wuewr"]
-[ext_resource type="Texture2D" uid="uid://dddng587u8107" path="res://assets/fog.png" id="8_7y48h"]
+[ext_resource type="Texture2D" uid="uid://m4rrhitghjsx" path="res://assets/fog.png" id="8_7y48h"]
 [ext_resource type="Texture2D" uid="uid://e6u2ol1rql72" path="res://assets/buildings.png" id="9_jgl6x"]
 [ext_resource type="Texture2D" uid="uid://eedj2ujkkeny" path="res://assets/Base.png" id="10_7y48h"]
 
@@ -134,7 +134,7 @@ scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(960, 0)
 
 [node name="Fog" type="Sprite2D" parent="ParallaxBackground/Area1/Fog" unique_id=1666214180]
-z_index = -4095
+z_index = -4093
 position = Vector2(480, 135)
 texture = ExtResource("8_7y48h")
 
