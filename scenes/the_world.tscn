@@ -8,12 +8,12 @@
 [ext_resource type="Script" uid="uid://bfqitjbey0n7r" path="res://scenes/pause_menu.gd" id="6_rm305"]
 [ext_resource type="Texture2D" uid="uid://ba7jyja2fw625" path="res://assets/clouds.png" id="7_wuewr"]
 [ext_resource type="Texture2D" uid="uid://m4rrhitghjsx" path="res://assets/fog.png" id="8_7y48h"]
-[ext_resource type="Texture2D" uid="uid://e6u2ol1rql72" path="res://assets/buildings.png" id="9_jgl6x"]
-[ext_resource type="Texture2D" uid="uid://eedj2ujkkeny" path="res://assets/Base.png" id="10_7y48h"]
+[ext_resource type="Texture2D" uid="uid://cjlf8tagig41g" path="res://assets/buildings.png" id="9_jgl6x"]
+[ext_resource type="Texture2D" uid="uid://deix342tjrnw5" path="res://assets/base.png" id="10_7y48h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m77hu"]
 radius = 6.0
-height = 24.0
+height = 18.0
 
 [sub_resource type="Animation" id="Animation_7y48h"]
 length = 0.001
@@ -64,7 +64,7 @@ position = Vector2(32, 176)
 script = ExtResource("2_cdqyx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter" unique_id=231886152]
-position = Vector2(8, -2)
+position = Vector2(8, -4)
 shape = SubResource("CapsuleShape2D_m77hu")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerCharacter" unique_id=1133461548]
